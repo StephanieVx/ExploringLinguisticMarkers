@@ -37,12 +37,6 @@ dftotal <- dftotal %>% select(-Filename, -WC)
 dftotal$Segment <- revalue(dftotal$Segment, c("ADHD"="MD", "Autism"="MD", "Bipolar"='MD', "Depression"="MD", "Dissociation"="MD", "Eating"="MD", "Personality"="MD", "Personality+"="MD", "Psychosis"="MD", "Trauma"="MD", "NonMD"='NoMD'))
 
 
-#dftotal$Segment<- revalue(dftotal$Segment, c('MD'= 1, 'NoMD' = 0))
-
-#df <- df%>% select(-WC, -Filename)
-
-
-
 #Descriptive statistics
 ggplot(df, aes(Segment, WC))+geom_boxplot()+xlab("Mental disorder") + ylab("Words per text")+theme(text = element_text(size=),axis.text.x = element_text(angle=90, hjust=1))+theme_minimal()+theme(text = element_text(size=17),axis.text.x = element_text(angle=90, hjust=1))
 ggplot(df, aes(Segment))+geom_bar() +  theme(axis.text.x = element_text(angle = 90))+xlab("Mental disorder") + ylab("Amount")+ theme_minimal()+theme(text = element_text(size=17),axis.text.x = element_text(angle=90, hjust=1))
